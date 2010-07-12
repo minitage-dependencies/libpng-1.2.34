@@ -1,0 +1,11 @@
+--- libpng-1.2.29/scripts/makefile.cygwin	2008-05-08 06:58:09.000000000 -0500
++++ libpng-1.2.29/scripts/makefile.cygwin	2008-05-14 10:01:28.671875000 -0500
+@@ -85,7 +85,7 @@
+ EXE=.exe
+ 
+ LDFLAGS=$(strip -L. $(MINGW_LDFLAGS) -lpng $(addprefix -L,$(ZLIBLIB)) -lz)
+-LDSFLAGS=$(strip -shared -L.  $(MINGW_LDFLAGS) -Wl,--export-all)
++LDSFLAGS=$(strip -shared -L.  $(MINGW_LDFLAGS) -Wl,--export-all -Wl,--enable-auto-image-base)
+ LDEXTRA=-Wl,--out-implib=$(IMPLIB) $(addprefix -L,$(ZLIBLIB)) -lz
+ 
+ MKDIR_P=/bin/mkdir -pv
